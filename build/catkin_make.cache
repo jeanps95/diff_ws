@@ -1,0 +1,2 @@
+robotDiff/robot_diff_control:robotDiff/robot_diff_description:robotDiff/robot_diff_gazebo
+-DCATKIN_DEVEL_PREFIX=/home/jean/diff_ws/devel -DCMAKE_INSTALL_PREFIX=/home/jean/diff_ws/install -G Unix Makefiles

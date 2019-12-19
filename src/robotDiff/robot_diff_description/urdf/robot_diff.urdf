@@ -1,0 +1,310 @@
+<?xml version="1.0" ?>
+
+<robot name="robot_diff" xmlns:xacro="http://ros.org/wiki/xacro">
+  <link name="base_link">
+  </link>
+
+  <!-- MONTAGEM DO CHASSIS -->
+  <link name="chassis">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_diff_description/meshes/Body.dae"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_diff_description/meshes/Body.dae"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="2.125"/>
+      <inertia ixx="3.352e-2" ixy="-9.804e-10" ixz="0" iyy="1.872e-2" iyx = "-9.804e-10" izy="-7.134e-10" iyz="-7.134e-10" izz="4.877e-2" izx="0"/>
+    </inertial>
+  </link>
+
+  <joint name="base_to_chassis" type="fixed">
+    <parent link="base_link"/>
+    <child link="chassis"/>
+    <origin rpy="0 0 0" xyz="0 0 0" />
+  </joint>
+
+
+  <!-- MONTAGEM DA RODA ESQUERDA TRASEIRA-->
+  <link name="roda_esquerda_traseira">
+    <visual>
+      <origin rpy="0 0 +1.571" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_diff_description/meshes/Wheel.dae"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 +1.571" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_diff_description/meshes/Wheel.dae"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin rpy="0 0 +1.571" xyz="0 0 0"/>
+      <mass value="13.6"/>
+      <inertia ixx="3.0989369e-3" ixy="0.0" ixz="0" iyy="4.2322454e-3" iyx="0" iyz="0" izz="3.0989369e-3" izx="0" izy="0" />
+    </inertial>
+  </link>
+
+  <joint name="base_to_roda_esquerda_traseira" type="continuous">
+    <parent link="chassis"/>
+    <child link="roda_esquerda_traseira"/>
+    <origin rpy="0 0 0" xyz="-0.252 -0.375 -0.097" />
+    <axis xyz="1 0 0" />
+  </joint>
+
+
+  <!-- MONTAGEM DA RODA ESQUERDA DIANTEIRA-->
+  <link name="roda_esquerda_dianteira">
+    <visual>
+      <origin rpy="0 0 +1.571" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_diff_description/meshes/Wheel.dae"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 +1.571" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_diff_description/meshes/Wheel.dae"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin rpy="0 0 +1.571" xyz="0 0 0"/>
+      <mass value="13.6"/>
+      <inertia ixx="3.0989369e-3" ixy="0.0" ixz="0" iyy="4.2322454e-3" iyx="0" iyz="0" izz="3.0989369e-3" izx="0" izy="0" />
+    </inertial>
+  </link>
+
+  <joint name="base_to_roda_esquerda_dianteira" type="continuous">
+    <parent link="chassis"/>
+    <child link="roda_esquerda_dianteira"/>
+    <origin rpy="0 0 0" xyz="-0.252 -0.125 -0.097" />
+    <axis xyz="1 0 0" />
+  </joint>
+
+
+
+  <!-- MONTAGEM DA RODA DIREITA TRASEIRA-->
+  <link name="roda_direita_traseira">
+    <visual>
+      <origin rpy="0 0 -1.571" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_diff_description/meshes/Wheel.dae"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 -1.571" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_diff_description/meshes/Wheel.dae"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin rpy="0 0 -1.571" xyz="0 0 0"/>
+      <mass value="13.6"/>
+      <inertia ixx="3.0989369e-3" ixy="0.0" ixz="0" iyy="4.2322454e-3" iyx="0" iyz="0" izz="3.0989369e-3" izx="0" izy="0" />
+    </inertial>
+  </link>
+
+  <joint name="base_to_roda_direita_traseira" type="continuous">
+    <parent link="chassis"/>
+    <child link="roda_direita_traseira"/>
+    <origin rpy="0 0 0" xyz="0.252 -0.375 -0.097" />
+    <axis xyz="1 0 0" />
+  </joint>
+
+
+  <!-- MONTAGEM DA RODA DIREITA DIANTEIRA-->
+  <link name="roda_direita_dianteira">
+    <visual>
+      <origin rpy="0 0 -1.571" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_diff_description/meshes/Wheel.dae"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 -1.571" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_diff_description/meshes/Wheel.dae"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin rpy="0 0 -1.571" xyz="0 0 0"/>
+      <mass value="13.6"/>
+      <inertia ixx="3.0989369e-3" ixy="0.0" ixz="0" iyy="4.2322454e-3" iyx="0" iyz="0" izz="3.0989369e-3" izx="0" izy="0" />
+    </inertial>
+  </link>
+
+  <joint name="base_to_roda_direita_dianteira" type="continuous">
+    <parent link="chassis"/>
+    <child link="roda_direita_dianteira"/>
+    <origin rpy="0 0 0" xyz="0.252 -0.125 -0.097" />
+    <axis xyz="1 0 0" />
+  </joint>
+
+
+
+    <!-- MONTAGEM DO LIDAR-->
+  <link name="lidar">
+    <visual>
+      <origin rpy="0 0 1.571" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_diff_description/meshes/Lidar.dae"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 1.571" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_diff_description/meshes/Lidar.dae"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin rpy="0 0 1.571" xyz="0 0 0"/>
+      <mass value="0.78"/>
+      <inertia ixx="1.955e-3" ixy="-3.644e-7" ixz="-9.194e-6" iyx="-3.644e-7" iyy="1.928e-3" iyz="8.363e-8" izx="-9.194e-6" izy="8.363e-8" izz="9.083e-4"/>
+    </inertial>
+  </link>
+
+  <joint name="base_to_lidar" type="fixed">
+    <parent link="chassis"/>
+    <child link="lidar"/>
+    <origin rpy="0 0 0" xyz="0 -0.25 0.051" />
+  </joint>
+
+    <!-- MONTAGEM DA CAMERA-->
+  <link name="camera_top">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_diff_description/meshes/Camera.dae"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_diff_description/meshes/Camera.dae"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.036"/>
+      <inertia ixx="2.614e-5" ixy="0" ixz="-7.109e-6" iyx="0" iyy="2.857e-5" iyz="0" izx="-7.109e-6" izy="0" izz="1.961e-5" />
+    </inertial>
+  </link>
+
+  <joint name="base_to_camera" type="fixed">
+    <parent link="chassis"/>
+    <child link="camera_top"/>
+    <origin rpy="0 0 1.571" xyz="0 -0.216 0.151" />
+  </joint>
+
+
+
+  <gazebo>
+    <plugin name="differential_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+      <alwaysOn>true</alwaysOn>
+      <legacyMode>false</legacyMode>
+      <updateRate>40</updateRate>
+      <leftFrontJoint>base_to_roda_esquerda_dianteira</leftFrontJoint>
+      <rightFrontJoint>base_to_roda_direita_dianteira</rightFrontJoint>
+      <leftRearJoint>base_to_roda_esquerda_traseira</leftRearJoint>
+      <rightRearJoint>base_to_roda_direita_traseira</rightRearJoint>
+      <!-- <wheelSeparation>${wheel_separation}</wheelSeparation> -->
+      <wheelDiameter>0.15</wheelDiameter> 
+      <torque>20</torque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <publishWheelTF>true</publishWheelTF>
+      <publishOdomTF>true</publishOdomTF>
+      <publishWheelJointState>true</publishWheelJointState>
+      <robotBaseFrame>base_link</robotBaseFrame>
+    </plugin>
+  </gazebo>
+
+  <gazebo reference="lidar">
+    <sensor type="ray" name="head_hokuyo_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>20</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>0</min_angle>
+            <max_angle>3.141592</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>10.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
+        <topicName>/diff/laser/scan</topicName>
+        <frameName>lidar</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="camera_top">
+    <sensor type="camera" name="camera_top">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>1366</width>
+          <height>768</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>mybot/camera_top</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_top</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+
+</robot>
