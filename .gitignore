@@ -1,2 +1,2 @@
-dir_to_ignore/build
-dir_to_ignore/devel
+/build
+/devel

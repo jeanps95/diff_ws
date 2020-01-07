@@ -30,7 +30,7 @@
   <joint name="base_to_chassis" type="fixed">
     <parent link="base_link"/>
     <child link="chassis"/>
-    <origin rpy="0 0 0" xyz="0 0 0" />
+    <origin rpy="0 0 3.1415" xyz="0 0 0" />
   </joint>
 
 
@@ -186,7 +186,7 @@
   <joint name="base_to_lidar" type="fixed">
     <parent link="chassis"/>
     <child link="lidar"/>
-    <origin rpy="0 0 0" xyz="0 -0.25 0.051" />
+    <origin rpy="0 0 3.1415" xyz="0 -0.25 0.051" />
   </joint>
 
     <!-- MONTAGEM DA CAMERA-->
@@ -215,7 +215,7 @@
   <joint name="base_to_camera" type="fixed">
     <parent link="chassis"/>
     <child link="camera_top"/>
-    <origin rpy="0 0 1.571" xyz="0 -0.216 0.151" />
+    <origin rpy="0 0 4.712" xyz="0 -0.284 0.151" />
   </joint>
 
 
@@ -253,7 +253,7 @@
             <samples>720</samples>
             <resolution>1</resolution>
             <min_angle>0</min_angle>
-            <max_angle>3.141592</max_angle>
+            <max_angle>3.1415</max_angle>
           </horizontal>
         </scan>
         <range>

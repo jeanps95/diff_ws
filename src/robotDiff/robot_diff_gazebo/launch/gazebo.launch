@@ -10,7 +10,8 @@
   <arg name="model"         default="$(find robot_diff_description)/urdf/robot_diff.urdf"/>
   
   <!-- We resume the logic in empty_world.launch -->
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+  <!-- <include file="$(find gazebo_ros)/launch/empty_world.launch"> -->
+  <include file="$(find robot_diff_gazebo)/launch/empty_world.launch">
     <!--<arg name="world_name"    value="$(find robot_diff_gazebo)/worlds/basic.world"/>-->
     <arg name="debug"         value="$(arg debug)" />
     <arg name="gui"           value="$(arg gui)" />
@@ -24,7 +25,7 @@
 
   <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-    args="-z 0.0 
+    args="-z 1.0 
           -unpause 
           -urdf 
           -model / 
